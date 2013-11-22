@@ -20,10 +20,12 @@ int main()
 
     CGAL::Timer t;
 	std::vector<Point> points;
+    std::vector<Point_3> lalt;
 	int counter = 0;
     t.start();
     while (input_begin != input_end) {
         Point_3 p = *(input_begin++);
+        lalt.push_back(p);
 		points.push_back( Point(p.x() / 360.0, (p.y() + 90.0) / 180.0) );
 		if ((++counter % 1000) == 0)
 			std::cout << counter << std::endl;
