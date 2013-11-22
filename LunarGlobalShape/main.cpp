@@ -18,19 +18,24 @@ int main()
     std::istream_iterator< Point_3 >  input_end;
     std::ostream_iterator< Point >  output( std::cout, "\n" );
 
+    CGAL::Timer t;
 	std::vector<Point> points;
 	int counter = 0;
+    t.start();
     while (input_begin != input_end) {
         Point_3 p = *(input_begin++);
 		points.push_back( Point(p.x() / 360.0, (p.y() + 90.0) / 180.0) );
 		if ((++counter % 1000) == 0)
 			std::cout << counter << std::endl;
     }
-
-	std::cout << "Initialized" << std::endl;
+    t.stop();
+	std::cout << "Data load : " << t.time() << "sec" << std::endl;
 
 	PDT T; // Put the domain with the constructor
+    t.start();
 	T.insert(points.begin(), points.end(), true);
+    t.stop();
+    std::cout << "Triangulation : " << t.time() << "sec" << std::endl;
     
     return 0;
 }

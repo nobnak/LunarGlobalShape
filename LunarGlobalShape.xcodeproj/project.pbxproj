@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		8FDDACE0183E1BC0004D985C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FDDACDF183E1BC0004D985C /* main.cpp */; };
 		8FDDACE2183E1BC0004D985C /* LunarGlobalShape.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8FDDACE1183E1BC0004D985C /* LunarGlobalShape.1 */; };
-		8FDDACE9183E1C3F004D985C /* libCGAL.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDDACE8183E1C3F004D985C /* libCGAL.dylib */; };
-		8FDDACEB183E1C4D004D985C /* libgmp.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDDACEA183E1C4D004D985C /* libgmp.dylib */; };
+		8FF743E5183F0E1D00D66336 /* libgmp.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF743E0183F04F600D66336 /* libgmp.dylib */; };
+		8FF743EA183F0E2E00D66336 /* libCGAL.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF743DE183F04EC00D66336 /* libCGAL.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,8 +30,9 @@
 		8FDDACDC183E1BC0004D985C /* LunarGlobalShape */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LunarGlobalShape; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FDDACDF183E1BC0004D985C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		8FDDACE1183E1BC0004D985C /* LunarGlobalShape.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = LunarGlobalShape.1; sourceTree = "<group>"; };
-		8FDDACE8183E1C3F004D985C /* libCGAL.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCGAL.dylib; path = ../../../../../opt/local/lib/libCGAL.dylib; sourceTree = "<group>"; };
-		8FDDACEA183E1C4D004D985C /* libgmp.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgmp.dylib; path = ../../../../../opt/local/lib/libgmp.dylib; sourceTree = "<group>"; };
+		8FF743DD183EFAAA00D66336 /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stdafx.h; sourceTree = "<group>"; };
+		8FF743DE183F04EC00D66336 /* libCGAL.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCGAL.dylib; path = ../../../../../opt/local/lib/libCGAL.dylib; sourceTree = "<group>"; };
+		8FF743E0183F04F600D66336 /* libgmp.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgmp.dylib; path = ../../../../../opt/local/lib/libgmp.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,8 +40,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FDDACEB183E1C4D004D985C /* libgmp.dylib in Frameworks */,
-				8FDDACE9183E1C3F004D985C /* libCGAL.dylib in Frameworks */,
+				8FF743E5183F0E1D00D66336 /* libgmp.dylib in Frameworks */,
+				8FF743EA183F0E2E00D66336 /* libCGAL.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,8 +51,8 @@
 		8FDDACD3183E1BC0004D985C = {
 			isa = PBXGroup;
 			children = (
-				8FDDACEA183E1C4D004D985C /* libgmp.dylib */,
-				8FDDACE8183E1C3F004D985C /* libCGAL.dylib */,
+				8FF743E0183F04F600D66336 /* libgmp.dylib */,
+				8FF743DE183F04EC00D66336 /* libCGAL.dylib */,
 				8FDDACDE183E1BC0004D985C /* LunarGlobalShape */,
 				8FDDACDD183E1BC0004D985C /* Products */,
 			);
@@ -68,6 +69,7 @@
 		8FDDACDE183E1BC0004D985C /* LunarGlobalShape */ = {
 			isa = PBXGroup;
 			children = (
+				8FF743DD183EFAAA00D66336 /* stdafx.h */,
 				8FDDACDF183E1BC0004D985C /* main.cpp */,
 				8FDDACE1183E1BC0004D985C /* LunarGlobalShape.1 */,
 			);
@@ -203,14 +205,16 @@
 		8FDDACE6183E1BC0004D985C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++98";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				HEADER_SEARCH_PATHS = (
+					/opt/local/include,
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					/opt/local/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
 					/opt/local/lib,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -219,14 +223,16 @@
 		8FDDACE7183E1BC0004D985C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++98";
+				CLANG_CXX_LIBRARY = "libstdc++";
 				HEADER_SEARCH_PATHS = (
+					/opt/local/include,
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					/opt/local/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
 					/opt/local/lib,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
