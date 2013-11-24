@@ -46,6 +46,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(BOOST_INCLUDEDIR);$(CGAL_DIR)\auxiliary\gmp\include;$(CGAL_DIR)\include;$(CGAL_DIR)\build\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(BOOST_LIBRARYDIR);$(CGAL_DIR)\auxiliary\gmp\lib;$(CGAL_DIR)\build\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -76,6 +78,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>libgmp-10.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
