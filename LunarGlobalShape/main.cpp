@@ -33,6 +33,7 @@ typedef Triangulation::Cell_iterator			Cell_iterator;
 typedef Triangulation::Facet_iterator			Facet_iterator;
 
 double LUNAR_RADIUS = 1737.4;
+double R_LUNAR_RADIUS = 1.0 / LUNAR_RADIUS;
 double ANGLE2RAD = 0.01745329251;
 
 int main()
@@ -99,10 +100,13 @@ int main()
 		facets.push_back(f);
 	}
 
-
 	std::ofstream oFileT("output.obj", std::ios::out);
-	for (std::vector<Point>::iterator it = points.begin(); it != points.end(); it++) {
-		Point p = *it;
+    oFileT << "v 0 0 0" << std::endl;
+	for (int i = 1; i < points.size(); i++) {
+		Point p = points[i];
+        Point pLalt = lalt[i-1];
+        double r = (LUNAR_RADIUS + pLalt.z()) * R_LUNAR_RADIUS;
+        p = Point(p.x() * r, p.y() * r, p.z() * r);
 		oFileT << "v " << p << std::endl;
 	}
 	for (std::vector<Facet>::iterator it = facets.begin(); it != facets.end(); it++) {
