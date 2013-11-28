@@ -10,9 +10,9 @@ LunarGlobalShape
 各行 "経度(0 ~ 360) 緯度(-90 ~ 90) 0(未使用)" の標準入力から、OBJ形式のメッシュを生成します。
 
 ## ビルドに必要なもの
-C++ コンパイラ
-[CGAL](http://doc.cgal.org/latest/Manual/installation.html) 64bit バージョンのインストールが必要です 
-Boost
+ - C++ コンパイラ
+ - [CGAL](http://doc.cgal.org/latest/Manual/installation.html) 64bit バージョンのインストールが必要です 
+ - Boost
 
 ## 作成例
 ![渦巻状メッシュ](html/CircularSphere.png)
@@ -21,7 +21,7 @@ Boost
 「国立天文台 RISE月惑星探査検討室」の[月形状グリッドデータ](http://www.miz.nao.ac.jp/rise-pub/content/pub-data/topo_grid)を入力としてOBJ形式のメッシュを生成します。
 
 # ビルドに必要なもの
-C# コンパイラ
+ - C# コンパイラ
 
 ## 作成例
 ![月01](html/Moon01.png)
