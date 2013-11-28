@@ -13,7 +13,7 @@ LunarGlobalShape
 ![渦巻状メッシュ](html/CircularSphere.png)
 
 # 月形状メッシュ作成
-「国立天文台 RISE月惑星探査検討室」の「月形状グリッドデータ」を入力としてOBJ形式のメッシュを生成します。
+「国立天文台 RISE月惑星探査検討室」の[月形状グリッドデータ](http://www.miz.nao.ac.jp/rise-pub/content/pub-data/topo_grid)を入力としてOBJ形式のメッシュを生成します。
 
 ## 作成例
 ![月01](html/Moon01.png)
