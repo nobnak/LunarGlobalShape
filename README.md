@@ -9,6 +9,9 @@ LunarGlobalShape
 # 点群から球形メッシュ作成
 各行 "経度(0 ~ 360) 緯度(-90 ~ 90) 0(未使用)" の標準入力から、OBJ形式のメッシュを生成します。
 
+## ビルドに必要なもの
+[CGAL](http://doc.cgal.org/latest/Manual/installation.html) 64bit バージョンのインストールが必要です 
+
 ## 作成例
 ![渦巻状メッシュ](html/CircularSphere.png)
 
